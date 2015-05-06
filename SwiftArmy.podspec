@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SwiftArmy"
-  s.version          = "0.1.0"
+  s.version          = "0.0.1"
   s.summary          = "A short description of SwiftArmy."
   s.description      = <<-DESC
                        An optional longer description of SwiftArmy
