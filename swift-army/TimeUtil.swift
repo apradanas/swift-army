@@ -10,19 +10,89 @@ import Foundation
 
 public extension NSDate {
     
-    func addDay(day: NSTimeInterval) -> NSDate {
-        return self.dateByAddingTimeInterval(24 * 60 * 60 * day)
+    func add(seconds: Int = 0, minutes: Int = 0, hours: Int = 0, days: Int = 0, weeks: Int = 0, months: Int = 0, years: Int = 0) -> NSDate {
+        var calendar = NSCalendar.currentCalendar()
+        
+        let version = floor(NSFoundationVersionNumber)
+        
+        if version <= NSFoundationVersionNumber10_9_2 {
+            var component = NSDateComponents()
+            component.setValue(seconds, forComponent: .CalendarUnitSecond)
+            
+            var date : NSDate! = calendar.dateByAddingComponents(component, toDate: self, options: nil)!
+            component = NSDateComponents()
+            component.setValue(minutes, forComponent: .CalendarUnitMinute)
+            date = calendar.dateByAddingComponents(component, toDate: date, options: nil)!
+            
+            component = NSDateComponents()
+            component.setValue(hours, forComponent: .CalendarUnitHour)
+            date = calendar.dateByAddingComponents(component, toDate: date, options: nil)!
+            
+            component = NSDateComponents()
+            component.setValue(days, forComponent: .CalendarUnitDay)
+            date = calendar.dateByAddingComponents(component, toDate: date, options: nil)!
+            
+            component = NSDateComponents()
+            component.setValue(weeks, forComponent: .CalendarUnitWeekOfMonth)
+            date = calendar.dateByAddingComponents(component, toDate: date, options: nil)!
+            
+            component = NSDateComponents()
+            component.setValue(months, forComponent: .CalendarUnitMonth)
+            date = calendar.dateByAddingComponents(component, toDate: date, options: nil)!
+            
+            component = NSDateComponents()
+            component.setValue(years, forComponent: .CalendarUnitYear)
+            date = calendar.dateByAddingComponents(component, toDate: date, options: nil)!
+            return date
+        }
+        
+        var date : NSDate! = calendar.dateByAddingUnit(.CalendarUnitSecond, value: seconds, toDate: self, options: nil)
+        date = calendar.dateByAddingUnit(.CalendarUnitMinute, value: minutes, toDate: date, options: nil)
+        date = calendar.dateByAddingUnit(.CalendarUnitDay, value: days, toDate: date, options: nil)
+        date = calendar.dateByAddingUnit(.CalendarUnitHour, value: hours, toDate: date, options: nil)
+        date = calendar.dateByAddingUnit(.CalendarUnitWeekOfMonth, value: weeks, toDate: date, options: nil)
+        date = calendar.dateByAddingUnit(.CalendarUnitMonth, value: months, toDate: date, options: nil)
+        date = calendar.dateByAddingUnit(.CalendarUnitYear, value: years, toDate: date, options: nil)
+        return date
+    }
+    
+    func addSeconds(seconds: Int) -> NSDate {
+        return add(seconds: seconds)
+    }
+    
+    func addMinutes(minutes: Int) -> NSDate {
+        return add(minutes: minutes)
+    }
+    
+    func addHours(hours: Int) -> NSDate {
+        return add(hours: hours)
+    }
+    
+    func addDays(days: Int) -> NSDate {
+        return add(days: days)
+    }
+    
+    func addWeeks(weeks: Int) -> NSDate {
+        return add(weeks: weeks)
+    }
+    
+    func addMonths(months: Int) -> NSDate {
+        return add(months: months)
+    }
+    
+    func addYears(years: Int) -> NSDate {
+        return add(years: years)
     }
     
     func getDateString(format: String, date: String) -> String {
         let dFormat = NSDateFormatter()
-        dFormat.dateFormat = "yyyy-MM-dd H:mm:ss"
+        dFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dFormat.dateFromString(date)!.getDateString(format)
     }
     
     func getDateString(format: String, date: String, locale: String) -> String {
         let dFormat = NSDateFormatter()
-        dFormat.dateFormat = "yyyy-MM-dd H:mm:ss"
+        dFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dFormat.dateFromString(date)!.getDateString(format, locale: locale)
     }
     
