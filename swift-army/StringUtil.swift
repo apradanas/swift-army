@@ -10,16 +10,14 @@ import Foundation
 
 public extension String {
     
+    var length: Int { return count(self) }
+    
     func equals(to: String) -> Bool {
         return self == to
     }
     
     func equalsIgnoreCase(to: String) -> Bool {
         return self.caseInsensitiveCompare(to) == NSComparisonResult.OrderedSame
-    }
-    
-    func length() -> Int {
-        return count(self)
     }
     
     func split(splitter: String) -> [String] {
