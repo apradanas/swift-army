@@ -56,11 +56,11 @@ public extension NSDate {
         return date
     }
     
-    func addSeconds(seconds: Int) -> NSDate {
+    func addSeconds (seconds: Int) -> NSDate {
         return add(seconds: seconds)
     }
     
-    func addMinutes(minutes: Int) -> NSDate {
+    func addMinutes (minutes: Int) -> NSDate {
         return add(minutes: minutes)
     }
     
@@ -82,6 +82,16 @@ public extension NSDate {
     
     func addYears(years: Int) -> NSDate {
         return add(years: years)
+    }
+    
+    func toLocalTime() -> NSDate {
+        let seconds = NSTimeZone.localTimeZone().secondsFromGMTForDate(self)
+        return self.addSeconds(seconds)
+    }
+    
+    func toGlobalTime() -> NSDate {
+        let seconds = -NSTimeZone.localTimeZone().secondsFromGMTForDate(self)
+        return self.addSeconds(seconds)
     }
     
     func getDateString(format: String, date: String) -> String {
