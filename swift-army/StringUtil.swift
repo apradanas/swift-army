@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     func equals(to: String) -> Bool {
         return self == to
