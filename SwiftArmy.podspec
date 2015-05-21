@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftArmy"
   s.version          = "0.0.1"
-  s.summary          = "A short description of SwiftArmy."
+  s.summary          = "Helper written in Swift"
   s.description      = "Helper written in Swift"
   s.homepage         = "https://github.com/apradanas/swift-army"
   s.license          = 'MIT'
