@@ -84,6 +84,14 @@ public extension NSDate {
         return add(years: years)
     }
     
+    func isAfter(date: NSDate) -> Bool{
+        return (self.compare(date) == NSComparisonResult.OrderedDescending)
+    }
+    
+    func isBefore(date: NSDate) -> Bool{
+        return (self.compare(date) == NSComparisonResult.OrderedAscending)
+    }
+    
     func toLocalTime() -> NSDate {
         let seconds = NSTimeZone.localTimeZone().secondsFromGMTForDate(self)
         return self.addSeconds(seconds)
