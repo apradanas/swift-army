@@ -102,6 +102,8 @@ Name | Signature
 **yearsTo** | `yearsTo(date: NSDate) -> Int`
 **isAfter** | `isAfter(date: NSDate) -> Bool`
 **isBefore** | `isBefore(date: NSDate) -> Bool`
+**isSameDayAs** | `isSameDayAs(date: NSDate) -> Bool`
+**isSameWeekAs** | `isSameWeekAs(date: NSDate) -> Bool`
 **toLocalTime** | `toLocalTime() -> NSDate`
 **toGlobalTime** | `toGlobalTime() -> NSDate`
 **getDateString** | `getDateString(format: String) -> String`
