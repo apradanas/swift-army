@@ -1,0 +1,9 @@
+language: objective-c
+osx_image: beta-xcode6.3
+podfile: Example/Podfile
+
+before_install:
+    - gem install cocoapods --quiet
+
+script:
+    - xctool -workspace Example/SwiftArmyExample.xcworkspace -scheme SwiftArmyExampleTests -sdk iphonesimulator8.3 build test

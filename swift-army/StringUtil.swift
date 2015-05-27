@@ -29,22 +29,22 @@ public extension String {
         return modifiedString.componentsSeparatedByString(stop)
     }
     
-    func trimmedLeft(characterSet set: NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()) -> String {
+    func trimLeft(characterSet set: NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()) -> String {
         if let range = rangeOfCharacterFromSet(set.invertedSet) {
             return self[range.startIndex..<endIndex]
         }
         return ""
     }
     
-    func trimmedRight(characterSet set: NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()) -> String {
+    func trimRight(characterSet set: NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()) -> String {
         if let range = rangeOfCharacterFromSet(set.invertedSet, options: NSStringCompareOptions.BackwardsSearch) {
             return self[startIndex..<range.endIndex]
         }
         return ""
     }
     
-    func trimmed() -> String {
-        return trimmedLeft().trimmedRight()
+    func trim() -> String {
+        return trimLeft().trimRight()
     }
     
     func toDouble() -> Double? {
@@ -68,7 +68,7 @@ public extension String {
     }
     
     func toUInt() -> UInt? {
-        if let val = self.trimmed().toInt() {
+        if let val = self.trim().toInt() {
             if val < 0 {
                 return nil
             }
@@ -78,7 +78,7 @@ public extension String {
     }
 
     func toBool() -> Bool? {
-        let text = self.trimmed().lowercaseString
+        let text = self.trim().lowercaseString
         if text == "true" || text == "false" || text == "yes" || text == "no" {
             return (text as NSString).boolValue
         }
@@ -86,7 +86,7 @@ public extension String {
     }
     
     func toDate(format: String? = "yyyy-MM-dd") -> NSDate? {
-        let text = self.trimmed().lowercaseString
+        let text = self.trim().lowercaseString
         var dateFormat = NSDateFormatter()
         dateFormat.timeZone = NSTimeZone.defaultTimeZone()
         if let fmt = format {
@@ -99,15 +99,15 @@ public extension String {
         return toDate(format: format)
     }
     
-    func convertDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd") -> String {
+    func changeDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd") -> String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
-        return dateFormat.dateFromString(self)!.getDateString(to)
+        return dateFormat.dateFromString(self)!.toString(to)
     }
     
-    func convertDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd", locale: String) -> String {
+    func changeDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd", locale: String) -> String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
-        return dateFormat.dateFromString(self)!.getDateString(to, locale: locale)
+        return dateFormat.dateFromString(self)!.toString(to, locale: locale)
     }
 }

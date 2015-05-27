@@ -1,0 +1,4 @@
+source 'https://github.com/CocoaPods/Specs.git'
+link_with "SwiftArmyExample", "SwiftArmyExampleTests"
+use_frameworks!
+pod 'SwiftArmy', '~> 0.1'

@@ -1,5 +1,8 @@
 # SwiftArmy
-![CocoaPods](https://img.shields.io/cocoapods/v/SwiftArmy.svg)
+[![CI Status](http://img.shields.io/travis/apradanas/swift-army.svg)](https://travis-ci.org/apradanas/swift-army)
+![Version](https://img.shields.io/cocoapods/v/SwiftArmy.svg)
+![License](https://img.shields.io/cocoapods/l/SwiftArmy.svg)
+![Platform](https://img.shields.io/cocoapods/p/SwiftArmy.svg)
 
 A collection of Swift extensions 
 
@@ -62,17 +65,17 @@ Name | Signature
 **equals** | `equals(to: String) -> Bool`
 **equalsIgnoreCase** | `equalsIgnoreCase(to: String) -> Bool`
 **split** | `split(splitter: String) -> [String]`
-**trimmed** | `trimmed() -> String`
-**trimmedLeft** | `trimmedLeft(set: NSCharacterSet) -> String`
-**trimmedRight** | `trimmedRight(set: NSCharacterSet) -> String`
+**trim** | `trim() -> String`
+**trimLeft** | `trimLeft(set: NSCharacterSet) -> String`
+**trimRight** | `trimRight(set: NSCharacterSet) -> String`
 **toDouble** | `toDouble() -> Double?`
 **toFloat** | `toFloat() -> Float?`
 **toUInt** | `toUInt() -> UInt?`
 **toBool** | `toBool() -> Bool?`
 **toDate** | `toDate(format: String?) -> NSDate?`
 **toDateTime** | `toDateTime(format: String?) -> NSDate?`
-**convertDateFormat** | `convertDateFormat(from: String, to: String) -> String`
-**convertDateFormat** | `convertDateFormat(from: String, to: String, locale: String) -> String`
+**changeDateFormat** | `changeDateFormat(from: String, to: String) -> String`
+**changeDateFormat** | `changeDateFormat(from: String, to: String, locale: String) -> String`
 
 ### Time (NSDate)
 
@@ -106,8 +109,8 @@ Name | Signature
 **isSameWeekAs** | `isSameWeekAs(date: NSDate) -> Bool`
 **toLocalTime** | `toLocalTime() -> NSDate`
 **toGlobalTime** | `toGlobalTime() -> NSDate`
-**getDateString** | `getDateString(format: String) -> String`
-**getDateString** | `getDateString(format: String, locale: String) -> String`
+**toString** | `toString(format: String) -> String`
+**toString** | `toString(format: String, locale: String) -> String`
 
 ## License
 
