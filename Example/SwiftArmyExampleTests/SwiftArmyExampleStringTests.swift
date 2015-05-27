@@ -66,110 +66,110 @@ class SwiftArmyExampleStringTests: XCTestCase {
         XCTAssertEqual(str.split("😱"), ["A B", "C"], "Incorrect string split")
     }
     
-    func testStringTrimmed() {
+    func testStringTrim() {
         var str = "A B C"
-        XCTAssertEqual(str.trimmed(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "A B C", "Incorrect string trim")
         
         str = " A B C"
-        XCTAssertEqual(str.trimmed(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "A B C", "Incorrect string trim")
         
         str = "A B C "
-        XCTAssertEqual(str.trimmed(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "A B C", "Incorrect string trim")
         
         str = "  A B C  "
-        XCTAssertEqual(str.trimmed(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "A B C", "Incorrect string trim")
         
         str = "\n A B C  "
-        XCTAssertEqual(str.trimmed(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "A B C", "Incorrect string trim")
         
         str = "  A B C \n"
-        XCTAssertEqual(str.trimmed(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "A B C", "Incorrect string trim")
         
         str = "  \n\t\n"
-        XCTAssertEqual(str.trimmed(), "", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "", "Incorrect string trim")
         
         str = ""
-        XCTAssertEqual(str.trimmed(), "", "Incorrect string trim")
+        XCTAssertEqual(str.trim(), "", "Incorrect string trim")
     }
     
-    func testStringTrimmedLeft() {
+    func testStringTrimLeft() {
         var str = "A B C"
-        XCTAssertEqual(str.trimmedLeft(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "A B C", "Incorrect string trim")
         
         str = " A B C"
-        XCTAssertEqual(str.trimmedLeft(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "A B C", "Incorrect string trim")
         
         str = "A B C "
-        XCTAssertEqual(str.trimmedLeft(), "A B C ", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "A B C ", "Incorrect string trim")
         
         str = "  A B C  "
-        XCTAssertEqual(str.trimmedLeft(), "A B C  ", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "A B C  ", "Incorrect string trim")
         
         str = "\n A B C  "
-        XCTAssertEqual(str.trimmedLeft(), "A B C  ", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "A B C  ", "Incorrect string trim")
         
         str = "  A B C \n"
-        XCTAssertEqual(str.trimmedLeft(), "A B C \n", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "A B C \n", "Incorrect string trim")
         
         str = "  \n\t\n"
-        XCTAssertEqual(str.trimmedLeft(), "", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "", "Incorrect string trim")
         
         str = ""
-        XCTAssertEqual(str.trimmedLeft(), "", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(), "", "Incorrect string trim")
     }
     
-    func testStringTrimmedLeftWithCharacterSet() {
+    func testStringTrimLeftWithCharacterSet() {
         var str = "AB C"
-        XCTAssertEqual(str.trimmedLeft(characterSet: .alphanumericCharacterSet()), " C", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(characterSet: .alphanumericCharacterSet()), " C", "Incorrect string trim")
         
         str = " A B C"
-        XCTAssertEqual(str.trimmedLeft(characterSet: .alphanumericCharacterSet()), " A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(characterSet: .alphanumericCharacterSet()), " A B C", "Incorrect string trim")
         
         str = "ABC "
-        XCTAssertEqual(str.trimmedLeft(characterSet: .alphanumericCharacterSet()), " ", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(characterSet: .alphanumericCharacterSet()), " ", "Incorrect string trim")
         
         str = "ABC"
-        XCTAssertEqual(str.trimmedLeft(characterSet: .alphanumericCharacterSet()), "", "Incorrect string trim")
+        XCTAssertEqual(str.trimLeft(characterSet: .alphanumericCharacterSet()), "", "Incorrect string trim")
     }
     
-    func testStringTrimmedRight() {
+    func testStringTrimRight() {
         var str = "A B C"
-        XCTAssertEqual(str.trimmedRight(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "A B C", "Incorrect string trim")
         
         str = " A B C"
-        XCTAssertEqual(str.trimmedRight(), " A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), " A B C", "Incorrect string trim")
         
         str = "A B C "
-        XCTAssertEqual(str.trimmedRight(), "A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "A B C", "Incorrect string trim")
         
         str = "  A B C  "
-        XCTAssertEqual(str.trimmedRight(), "  A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "  A B C", "Incorrect string trim")
         
         str = "\n A B C  "
-        XCTAssertEqual(str.trimmedRight(), "\n A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "\n A B C", "Incorrect string trim")
         
         str = "  A B C \n"
-        XCTAssertEqual(str.trimmedRight(), "  A B C", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "  A B C", "Incorrect string trim")
         
         str = "  \n\t\n"
-        XCTAssertEqual(str.trimmedRight(), "", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "", "Incorrect string trim")
         
         str = ""
-        XCTAssertEqual(str.trimmedRight(), "", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(), "", "Incorrect string trim")
     }
     
-    func testStringTrimmedRighttWithCharacterSet() {
+    func testStringTrimRighttWithCharacterSet() {
         var str = "AB C"
-        XCTAssertEqual(str.trimmedRight(characterSet: .alphanumericCharacterSet()), "AB ", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(characterSet: .alphanumericCharacterSet()), "AB ", "Incorrect string trim")
         
         str = "A B C "
-        XCTAssertEqual(str.trimmedRight(characterSet: .alphanumericCharacterSet()), "A B C ", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(characterSet: .alphanumericCharacterSet()), "A B C ", "Incorrect string trim")
         
         str = "ABC "
-        XCTAssertEqual(str.trimmedRight(characterSet: .alphanumericCharacterSet()), "ABC ", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(characterSet: .alphanumericCharacterSet()), "ABC ", "Incorrect string trim")
         
         str = "ABC"
-        XCTAssertEqual(str.trimmedRight(characterSet: .alphanumericCharacterSet()), "", "Incorrect string trim")
+        XCTAssertEqual(str.trimRight(characterSet: .alphanumericCharacterSet()), "", "Incorrect string trim")
     }
 
     func testPerformanceExample() {
