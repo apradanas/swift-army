@@ -1,5 +1,7 @@
 # SwiftArmy
-![CocoaPods](https://img.shields.io/cocoapods/v/SwiftArmy.svg)
+![Version](https://img.shields.io/cocoapods/v/SwiftArmy.svg)
+![License](https://img.shields.io/cocoapods/l/SwiftArmy.svg)
+![Platform](https://img.shields.io/cocoapods/p/SwiftArmy.svg)
 
 A collection of Swift extensions 
 
