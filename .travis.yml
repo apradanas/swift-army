@@ -7,4 +7,4 @@ before_install:
     - sleep 20
 
 script:
-    - xctool -workspace Example/SwiftArmyExample.xcworkspace -sdk iphonesimulator -scheme SwiftArmyExampleTests -sdk iphonesimulator8.1 build test
+    - xctool -workspace Example/SwiftArmyExample.xcworkspace -sdk iphonesimulator -scheme SwiftArmyExampleTests -sdk iphonesimulator8.3 build test
