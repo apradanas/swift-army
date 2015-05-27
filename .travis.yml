@@ -3,8 +3,7 @@ podfile: Example/Podfile
 
 before_install:
     - gem install cocoapods --quiet
-    - "xcrun instruments -w 'iPhone 6 (8.1 Simulator)' || true"
     - sleep 20
 
 script:
-    - "xctool -workspace Example/SwiftArmyExample.xcworkspace -sdk iphonesimulator -scheme SwiftArmyExampleTests -destination platform='iOS Simulator','OS=8.1',name='iPhone 6' build test"
+    - xctool -workspace Example/SwiftArmyExample.xcworkspace -sdk iphonesimulator -scheme SwiftArmyExampleTests -sdk iphonesimulator8.0 build test
