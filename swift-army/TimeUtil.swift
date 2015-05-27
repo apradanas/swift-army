@@ -84,64 +84,82 @@ public extension NSDate {
         return add(years: years)
     }
     
-    func yearsFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear, fromDate: date, toDate: self, options: nil).year
-    }
-    
-    func monthsFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMonth, fromDate: date, toDate: self, options: nil).month
-    }
-    
-    func weeksFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: date, toDate: self, options: nil).weekOfYear
-    }
-    
-    func daysFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitDay, fromDate: date, toDate: self, options: nil).day
-    }
-    
-    func hoursFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitHour, fromDate: date, toDate: self, options: nil).hour
+    func secondsFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitSecond, fromDate: date, toDate: self, options: nil).second
     }
     
     func minutesFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMinute, fromDate: date, toDate: self, options: nil).minute
+        return NSCalendar.currentCalendar().components(.CalendarUnitMinute, fromDate: date, toDate: self, options: nil).minute
     }
     
-    func secondsFrom(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitSecond, fromDate: date, toDate: self, options: nil).second
+    func hoursFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: date, toDate: self, options: nil).hour
     }
     
-    func yearsTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear, fromDate: self, toDate: date, options: nil).year
+    func daysFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitDay, fromDate: date, toDate: self, options: nil).day
     }
     
-    func monthsTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMonth, fromDate: self, toDate: date, options: nil).month
+    func weeksFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitWeekOfYear, fromDate: date, toDate: self, options: nil).weekOfYear
     }
     
-    func weeksTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: self, toDate: date, options: nil).weekOfYear
+    func monthsFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitMonth, fromDate: date, toDate: self, options: nil).month
     }
     
-    func daysTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitDay, fromDate: self, toDate: date, options: nil).day
-    }
-    
-    func hoursTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitHour, fromDate: self, toDate: date, options: nil).hour
-    }
-    
-    func minutesTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMinute, fromDate: self, toDate: date, options: nil).minute
+    func yearsFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitYear, fromDate: date, toDate: self, options: nil).year
     }
     
     func secondsTo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitSecond, fromDate: self, toDate: date, options: nil).second
+        return NSCalendar.currentCalendar().components(.CalendarUnitSecond, fromDate: self, toDate: date, options: nil).second
+    }
+    
+    func minutesTo(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitMinute, fromDate: self, toDate: date, options: nil).minute
+    }
+    
+    func hoursTo(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: self, toDate: date, options: nil).hour
+    }
+
+    func daysTo(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitDay, fromDate: self, toDate: date, options: nil).day
+    }
+
+    func weeksTo(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitWeekOfYear, fromDate: self, toDate: date, options: nil).weekOfYear
+    }
+    
+    func monthsTo(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitMonth, fromDate: self, toDate: date, options: nil).month
+    }
+    
+    func yearsTo(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.CalendarUnitYear, fromDate: self, toDate: date, options: nil).year
     }
     
     func isAfter(date: NSDate) -> Bool {
         return (self.compare(date) == NSComparisonResult.OrderedDescending)
+    }
+    
+    func isSameDayAs(date: NSDate) -> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlags = NSCalendarUnit.CalendarUnitEra | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay
+        let lhs = calendar.components(unitFlags, fromDate: self)
+        let rhs = calendar.components(unitFlags, fromDate: date)
+        
+        return lhs.day == rhs.day && lhs.month == rhs.month && lhs.year == rhs.year
+    }
+    
+    func isSameWeekAs(date: NSDate) -> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlags = NSCalendarUnit.CalendarUnitEra | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitWeekOfYear
+        let lhs = calendar.components(unitFlags, fromDate: self)
+        let rhs = calendar.components(unitFlags, fromDate: date)
+        
+        return lhs.weekOfYear == rhs.weekOfYear && lhs.month == rhs.month && lhs.year == rhs.year
     }
     
     func isBefore(date: NSDate) -> Bool {
