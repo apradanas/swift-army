@@ -1,5 +1,5 @@
 # SwiftArmy
-![CI Status](http://img.shields.io/travis/apradanas/swift-army.svg)
+[![CI Status](http://img.shields.io/travis/apradanas/swift-army.svg)](https://travis-ci.org/apradanas/swift-army)
 ![Version](https://img.shields.io/cocoapods/v/SwiftArmy.svg)
 ![License](https://img.shields.io/cocoapods/l/SwiftArmy.svg)
 ![Platform](https://img.shields.io/cocoapods/p/SwiftArmy.svg)
