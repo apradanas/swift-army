@@ -30,6 +30,23 @@ Name | Signature
 **init** | `init(rgba: String)`
 **init** | `init(rgb: Int, alpha: CGFloat)`
 
+### Int
+
+#### Properties
+
+Name |
+---- |
+`years: NSTimeInterval` |
+`year: NSTimeInterval` |
+`days: NSTimeInterval` |
+`day: NSTimeInterval` |
+`hours: NSTimeInterval` |
+`hour: NSTimeInterval` |
+`minutes: NSTimeInterval` |
+`minute: NSTimeInterval` |
+`seconds: NSTimeInterval` |
+`second: NSTimeInterval` |
+
 ### String
 
 #### Properties
