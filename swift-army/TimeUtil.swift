@@ -56,11 +56,11 @@ public extension NSDate {
         return date
     }
     
-    func addSeconds (seconds: Int) -> NSDate {
+    func addSeconds(seconds: Int) -> NSDate {
         return add(seconds: seconds)
     }
     
-    func addMinutes (minutes: Int) -> NSDate {
+    func addMinutes(minutes: Int) -> NSDate {
         return add(minutes: minutes)
     }
     
