@@ -2,7 +2,7 @@
 //  SwiftArmyExampleTests.swift
 //  SwiftArmyExampleTests
 //
-//  Created by Onebit-Adit-Mac on 5/27/15.
+//  Created by Aditya Pradana Sugiarto on 5/27/15.
 //  Copyright (c) 2015 @apradanas. All rights reserved.
 //
 
