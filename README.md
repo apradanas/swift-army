@@ -16,7 +16,7 @@ A collection of Swift extensions
 
 ### Manual
 
-Just clone and add all *.swift files in ```swift-army``` to your project.
+Just clone and add all *.swift files in ```swift-army``` folder to your project.
 
 ### CocoaPods
 
@@ -49,6 +49,15 @@ Name |
 `minute: NSTimeInterval` |
 `seconds: NSTimeInterval` |
 `second: NSTimeInterval` |
+
+#### Instance Methods
+
+Name | Signature
+---- | ---------
+**isEven** | `isEven() -> Bool`
+**isOdd** | `isOdd() -> Bool`
+**split** | `split() -> [Int]`
+**abs** | `abs() -> Int`
 
 ### String
 
