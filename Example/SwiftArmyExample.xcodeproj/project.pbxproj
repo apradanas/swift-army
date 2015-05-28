@@ -10,6 +10,7 @@
 		9CD10EC7BD3F6CD2539B2051 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ECBE02673973B17B9E9066 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DF3458921B16382E00BE67DE /* SwiftArmyExampleStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3458911B16382E00BE67DE /* SwiftArmyExampleStringTests.swift */; };
 		DF42D3D81B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D3D71B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift */; };
+		DF42D3DA1B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D3D91B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift */; };
 		DFC6D6961B1612F700D3E285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D6951B1612F700D3E285 /* AppDelegate.swift */; };
 		DFC6D6981B1612F700D3E285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D6971B1612F700D3E285 /* ViewController.swift */; };
 		DFC6D69B1B1612F700D3E285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC6D6991B1612F700D3E285 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		A409BF6EB188BB085A6DC5A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DF3458911B16382E00BE67DE /* SwiftArmyExampleStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleStringTests.swift; sourceTree = "<group>"; };
 		DF42D3D71B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleIntTests.swift; sourceTree = "<group>"; };
+		DF42D3D91B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleTimeTests.swift; sourceTree = "<group>"; };
 		DFC6D6901B1612F700D3E285 /* SwiftArmyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArmyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC6D6941B1612F700D3E285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC6D6951B1612F700D3E285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				DFC6D6AB1B1612F700D3E285 /* SwiftArmyExampleTests.swift */,
 				DF42D3D71B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift */,
 				DF3458911B16382E00BE67DE /* SwiftArmyExampleStringTests.swift */,
+				DF42D3D91B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift */,
 				DFC6D6A91B1612F700D3E285 /* Supporting Files */,
 			);
 			path = SwiftArmyExampleTests;
@@ -354,6 +357,7 @@
 			files = (
 				DF3458921B16382E00BE67DE /* SwiftArmyExampleStringTests.swift in Sources */,
 				DFC6D6AC1B1612F700D3E285 /* SwiftArmyExampleTests.swift in Sources */,
+				DF42D3DA1B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift in Sources */,
 				DF42D3D81B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
