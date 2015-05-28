@@ -144,6 +144,10 @@ public extension NSDate {
         return (self.compare(date) == NSComparisonResult.OrderedDescending)
     }
     
+    func isBefore(date: NSDate) -> Bool {
+        return (self.compare(date) == NSComparisonResult.OrderedAscending)
+    }
+    
     func isSameDayAs(date: NSDate) -> Bool {
         let calendar = NSCalendar.currentCalendar()
         let unitFlags = NSCalendarUnit.CalendarUnitEra | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay
@@ -160,10 +164,6 @@ public extension NSDate {
         let rhs = calendar.components(unitFlags, fromDate: date)
         
         return lhs.weekOfYear == rhs.weekOfYear && lhs.month == rhs.month && lhs.year == rhs.year
-    }
-    
-    func isBefore(date: NSDate) -> Bool {
-        return (self.compare(date) == NSComparisonResult.OrderedAscending)
     }
     
     func toLocalTime() -> NSDate {
