@@ -78,8 +78,8 @@ public extension String {
     }
 
     func toBool() -> Bool? {
-        let text = self.trim().lowercaseString
-        if text == "true" || text == "false" || text == "yes" || text == "no" {
+        let text = self.trim()
+        if text.equalsIgnoreCase("true") || text.equalsIgnoreCase("false") || text.equalsIgnoreCase("yes") || text.equalsIgnoreCase("no") {
             return (text as NSString).boolValue
         }
         return nil
@@ -99,15 +99,21 @@ public extension String {
         return toDate(format: format)
     }
     
-    func changeDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd") -> String {
+    func changeDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd") -> String? {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
-        return dateFormat.dateFromString(self)!.toString(to)
+        if let date = dateFormat.dateFromString(self.trim()) {
+            return date.toString(to)
+        }
+        return nil
     }
     
-    func changeDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd", locale: String) -> String {
+    func changeDateFormat(from: String = "yyyy-MM-dd HH:mm:ss", to: String = "yyyy-MM-dd", locale: String) -> String? {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
-        return dateFormat.dateFromString(self)!.toString(to, locale: locale)
+        if let date = dateFormat.dateFromString(self.trim()) {
+            return date.toString(to, locale: locale)
+        }
+        return nil
     }
 }
