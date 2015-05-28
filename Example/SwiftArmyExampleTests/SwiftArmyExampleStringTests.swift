@@ -171,6 +171,202 @@ class SwiftArmyExampleStringTests: XCTestCase {
         str = "ABC"
         XCTAssertEqual(str.trimRight(characterSet: .alphanumericCharacterSet()), "", "Incorrect string trim")
     }
+    
+    func testStringToDouble() {
+        var str = "82"
+        XCTAssertNotNil(str.toDouble(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toDouble()!, 82, 0.0001, "String conversion error")
+        
+        str = "8.2"
+        XCTAssertNotNil(str.toDouble(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toDouble()!, 8.2, 0.0001, "String conversion error")
+        
+        str = "-8.876543"
+        XCTAssertNotNil(str.toDouble(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toDouble()!, -8.876543, 0.0001, "String conversion error")
+        
+        str = "   8.2"
+        XCTAssertNotNil(str.toDouble(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toDouble()!, 8.2, 0.0001, "String conversion error")
+        
+        str = "a8.876543"
+        XCTAssertNil(str.toDouble(), "String conversion error")
+    }
+    
+    func testStringToFloat() {
+        var str = "82"
+        XCTAssertNotNil(str.toFloat(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toFloat()!, 82, 0.0001, "String conversion error")
+        
+        str = "8.2"
+        XCTAssertNotNil(str.toFloat(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toFloat()!, 8.2, 0.0001, "String conversion error")
+        
+        str = "-8.876543"
+        XCTAssertNotNil(str.toFloat(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toFloat()!, -8.876543, 0.0001, "String conversion error")
+        
+        str = "   8.2"
+        XCTAssertNotNil(str.toFloat(), "String conversion error")
+        XCTAssertEqualWithAccuracy(str.toFloat()!, 8.2, 0.0001, "String conversion error")
+        
+        str = "a8.876543"
+        XCTAssertNil(str.toFloat(), "String conversion error")
+    }
+    
+    func testStringToUInt() {
+        var str = "82"
+        XCTAssertNotNil(str.toFloat(), "String conversion error")
+        XCTAssertEqual(str.toUInt()!, 82, "String conversion error")
+        
+        str = "   82"
+        XCTAssertNotNil(str.toFloat(), "String conversion error")
+        XCTAssertEqual(str.toUInt()!, 82, "String conversion error")
+        
+        str = "8.2"
+        XCTAssertNil(str.toUInt(), "String conversion error")
+        
+        str = "-8.876543"
+        XCTAssertNil(str.toUInt(), "String conversion error")
+        
+        str = "a8.876543"
+        XCTAssertNil(str.toUInt(), "String conversion error")
+    }
+    
+    func testStringToBool() {
+        var str = "YES"
+        XCTAssertNotNil(str.toBool(), "String conversion error")
+        XCTAssertTrue(str.toBool()!, "String conversion error")
+        
+        str = "nO"
+        XCTAssertNotNil(str.toBool(), "String conversion error")
+        XCTAssertFalse(str.toBool()!, "String conversion error")
+        
+        str = "trUE"
+        XCTAssertNotNil(str.toBool(), "String conversion error")
+        XCTAssertTrue(str.toBool()!, "String conversion error")
+        
+        str = "FALse"
+        XCTAssertNotNil(str.toBool(), "String conversion error")
+        XCTAssertFalse(str.toBool()!, "String conversion error")
+        
+        str = "Alan"
+        XCTAssertNil(str.toBool(), "String conversion error")
+        
+        str = "7"
+        XCTAssertNil(str.toBool(), "String conversion error")
+        
+        str = "😗"
+        XCTAssertNil(str.toBool(), "String conversion error")
+        
+        str = ""
+        XCTAssertNil(str.toBool(), "String conversion error")
+    }
+    
+    func testStringToDate() {
+        var strDate = " 2015-05-05\n"
+        var date = strDate.toDate()!
+        XCTAssertNotNil(date, "String conversion error")
+        
+        var comps = NSDateComponents()
+        comps.year = 2015
+        comps.month = 5
+        comps.day = 5
+        
+        var calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        XCTAssertEqual(calendar.dateFromComponents(comps)!, date, "String conversion error")
+        
+        var str = ""
+        XCTAssertNil(str.toDate(), "String conversion error")
+        
+        str = "😗"
+        XCTAssertNil(str.toDate(), "String conversion error")
+        
+        str = "cc55.76"
+        XCTAssertNil(str.toDate(), "String conversion error")
+        
+        str = "Sunday"
+        XCTAssertNil(str.toDate(), "String conversion error")
+        
+        str = "2015-05-05 00:00:00"
+        XCTAssertNil(str.toDate(), "String conversion error")
+    }
+    
+    func testStringToDateTime() {
+        var strDate = " 2015-05-05 10:20:30\n"
+        var date = strDate.toDateTime()!
+        XCTAssertNotNil(date, "String conversion error")
+        
+        var comps = NSDateComponents()
+        comps.year = 2015
+        comps.month = 5
+        comps.day = 5
+        comps.hour = 10
+        comps.minute = 20
+        comps.second = 30
+        
+        var calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        XCTAssertEqual(calendar.dateFromComponents(comps)!, date, "String conversion error")
+        
+        var str = ""
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "😗"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "cc55.76"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "Sunday"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "2015-05-05"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+    }
+    
+    func testStringChangeDateFormat() {
+        var str = " 2015-05-05 10:20:30\n"
+        XCTAssertNotNil(str.changeDateFormat()!, "String conversion error")
+        XCTAssertEqual(str.changeDateFormat()!, "2015-05-05", "String conversion error")
+        
+        str = ""
+        XCTAssertNil(str.changeDateFormat(), "String conversion error")
+        
+        str = "😗"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "cc55.76"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "Sunday"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "2015-05-05"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+    }
+    
+    func testStringChangeDateFormatWithLocale() {
+        var str = " 2015-05-05 10:20:30\n"
+        XCTAssertNotNil(str.changeDateFormat(locale: "ja_JP")!, "String conversion error")
+        XCTAssertEqual(str.changeDateFormat(locale: "ja_JP")!, "2015/05/05", "String conversion error")
+        XCTAssertEqual(str.changeDateFormat(to: "dd MMMM", locale: "ja_JP")!, "5月05日", "String conversion error")
+        
+        str = ""
+        XCTAssertNil(str.changeDateFormat(), "String conversion error")
+        
+        str = "😗"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "cc55.76"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "Sunday"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+        
+        str = "2015-05-05"
+        XCTAssertNil(str.toDateTime(), "String conversion error")
+    }
+
 
     func testPerformanceExample() {
         self.measureBlock() {
