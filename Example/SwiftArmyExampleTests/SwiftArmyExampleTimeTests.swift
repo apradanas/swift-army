@@ -224,7 +224,7 @@ class SwiftArmyExampleTimeTests: XCTestCase {
         XCTAssertFalse(self.startDate!.isSameDayAs(expectedDate!), "Is same day method error")
     }
     
-    /*func testTimeIsSameWeek() {
+    func testTimeIsSameWeek() {
         var expectedDate = self.dateFormatter.dateFromString("2015-01-01 00:00:00")
         XCTAssertTrue(self.startDate!.isSameWeekAs(expectedDate!), "Is same week method error")
         
@@ -248,7 +248,7 @@ class SwiftArmyExampleTimeTests: XCTestCase {
         
         expectedDate = self.dateFormatter.dateFromString("2015-10-10 12:00:00")
         XCTAssertFalse(self.startDate!.isSameWeekAs(expectedDate!), "Is same week method error")
-    }*/
+    }
 
     func testPerformanceExample() {
         self.measureBlock() {
