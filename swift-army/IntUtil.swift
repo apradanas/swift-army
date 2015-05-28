@@ -49,4 +49,28 @@ public extension Int {
     var second: NSTimeInterval {
         return self.seconds
     }
+    
+    func isEven() -> Bool {
+        return (self % 2) == 0
+    }
+    
+    func isOdd() -> Bool {
+        return !isEven()
+    }
+    
+    func split() -> [Int] {
+        var result = [Int]()
+        
+        for char in String(self) {
+            let str = String(char)
+            if let int = str.toInt() {
+                result.append(int)
+            }
+        }
+        return result
+    }
+    
+    func abs() -> Int {
+        return Swift.abs(self)
+    }
 }
