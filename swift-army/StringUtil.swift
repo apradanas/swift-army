@@ -103,7 +103,7 @@ public extension String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
         if let date = dateFormat.dateFromString(self.trim()) {
-            return date.toString(to)
+            return date.toString(format: to)
         }
         return nil
     }
@@ -112,7 +112,7 @@ public extension String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
         if let date = dateFormat.dateFromString(self.trim()) {
-            return date.toString(to, locale: locale)
+            return date.toStringWithLocale(format: to, locale: locale)
         }
         return nil
     }

@@ -179,13 +179,13 @@ public extension NSDate {
         return self.addSeconds(seconds)
     }
     
-    func toString(format: String) -> String {
+    func toString(format: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = format
         return dateFormat.stringFromDate(self)
     }
     
-    func toString(format: String, locale: String) -> String {
+    func toStringWithLocale(format: String = "yyyy-MM-dd HH:mm:ss", locale: String = "en_US") -> String {
         let templateDateFormat = NSDateFormatter.dateFormatFromTemplate(format,
             options: 0,
             locale: NSLocale(localeIdentifier: locale)
