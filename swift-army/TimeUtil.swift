@@ -144,6 +144,10 @@ public extension NSDate {
         return (self.compare(date) == NSComparisonResult.OrderedDescending)
     }
     
+    func isBefore(date: NSDate) -> Bool {
+        return (self.compare(date) == NSComparisonResult.OrderedAscending)
+    }
+    
     func isSameDayAs(date: NSDate) -> Bool {
         let calendar = NSCalendar.currentCalendar()
         let unitFlags = NSCalendarUnit.CalendarUnitEra | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay
@@ -154,16 +158,15 @@ public extension NSDate {
     }
     
     func isSameWeekAs(date: NSDate) -> Bool {
-        let calendar = NSCalendar.currentCalendar()
-        let unitFlags = NSCalendarUnit.CalendarUnitEra | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitWeekOfYear
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let unitFlags = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitYearForWeekOfYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitWeekOfYear
         let lhs = calendar.components(unitFlags, fromDate: self)
         let rhs = calendar.components(unitFlags, fromDate: date)
         
-        return lhs.weekOfYear == rhs.weekOfYear && lhs.month == rhs.month && lhs.year == rhs.year
-    }
-    
-    func isBefore(date: NSDate) -> Bool {
-        return (self.compare(date) == NSComparisonResult.OrderedAscending)
+        if lhs.year == rhs.year {
+            return lhs.weekOfYear == rhs.weekOfYear && lhs.month == rhs.month && lhs.year == rhs.year
+        }
+        return lhs.yearForWeekOfYear == rhs.yearForWeekOfYear && lhs.weekOfYear == rhs.weekOfYear
     }
     
     func toLocalTime() -> NSDate {
