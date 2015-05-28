@@ -33,6 +33,20 @@ Name | Signature
 **init** | `init(rgba: String)`
 **init** | `init(rgb: Int, alpha: CGFloat)`
 
+### Double
+
+Name | Signature
+---- | ---------
+**ceil** | `ceil() -> Double`
+**floor** | `floor() -> Double`
+
+### Float
+
+Name | Signature
+---- | ---------
+**ceil** | `ceil() -> Float`
+**floor** | `floor() -> Float`
+
 ### Int
 
 #### Properties
