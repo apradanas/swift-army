@@ -30,8 +30,8 @@ Just clone and add all *.swift files in ```swift-army``` folder to your project.
 
 Name | Signature
 ---- | ---------
-**init** | `init(rgba: String)`
-**init** | `init(rgb: Int, alpha: CGFloat)`
+**init** | `init(rgbaString rgba: String)`
+**init** | `init(rgbaUInt rgba: UInt)`
 
 ### Double
 
@@ -70,6 +70,9 @@ Name | Signature
 ---- | ---------
 **isEven** | `isEven() -> Bool`
 **isOdd** | `isOdd() -> Bool`
+**isPositive** | `isPositive() -> Bool`
+**isNegative** | `isNegative() -> Bool`
+**isZero** | `isZero() -> Bool`
 **split** | `split() -> [Int]`
 **abs** | `abs() -> Int`
 
@@ -91,6 +94,7 @@ Name | Signature
 **trim** | `trim() -> String`
 **trimLeft** | `trimLeft(set: NSCharacterSet) -> String`
 **trimRight** | `trimRight(set: NSCharacterSet) -> String`
+**isValidEmail** | `isValidEmail() -> Bool`
 **toDouble** | `toDouble() -> Double?`
 **toFloat** | `toFloat() -> Float?`
 **toUInt** | `toUInt() -> UInt?`
