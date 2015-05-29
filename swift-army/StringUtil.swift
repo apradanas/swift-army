@@ -10,7 +10,11 @@ import Foundation
 
 public extension String {
     
+    // MARK: - Properties
+    
     var length: Int { return count(self) }
+    
+    // MARK: - Instance Methods
     
     func equals(to: String) -> Bool {
         return self == to
