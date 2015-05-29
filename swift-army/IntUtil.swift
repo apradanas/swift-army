@@ -58,6 +58,18 @@ public extension Int {
         return !isEven()
     }
     
+    func isPositive() -> Bool {
+        return self > 0
+    }
+    
+    func isNegative() -> Bool {
+        return !isPositive()
+    }
+
+    func isZero() -> Bool {
+        return self == 0
+    }
+    
     func split() -> [Int] {
         var result = [Int]()
         
