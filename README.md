@@ -16,7 +16,7 @@ A collection of Swift extensions
 
 ### Manual
 
-Just clone and add all *.swift files in ```swift-army``` to your project.
+Just clone and add all *.swift files in ```swift-army``` folder to your project.
 
 ### CocoaPods
 
@@ -30,8 +30,22 @@ Just clone and add all *.swift files in ```swift-army``` to your project.
 
 Name | Signature
 ---- | ---------
-**init** | `init(rgba: String)`
-**init** | `init(rgb: Int, alpha: CGFloat)`
+**init** | `init(rgbaString rgba: String)`
+**init** | `init(rgbaUInt rgba: UInt)`
+
+### Double
+
+Name | Signature
+---- | ---------
+**ceil** | `ceil() -> Double`
+**floor** | `floor() -> Double`
+
+### Float
+
+Name | Signature
+---- | ---------
+**ceil** | `ceil() -> Float`
+**floor** | `floor() -> Float`
 
 ### Int
 
@@ -50,13 +64,25 @@ Name |
 `seconds: NSTimeInterval` |
 `second: NSTimeInterval` |
 
+#### Instance Methods
+
+Name | Signature
+---- | ---------
+**isEven** | `isEven() -> Bool`
+**isOdd** | `isOdd() -> Bool`
+**isPositive** | `isPositive() -> Bool`
+**isNegative** | `isNegative() -> Bool`
+**isZero** | `isZero() -> Bool`
+**split** | `split() -> [Int]`
+**abs** | `abs() -> Int`
+
 ### String
 
 #### Properties
 
 Name |
 ---- |
-`length` |
+`length: Int` |
 
 #### Instance Methods
 
@@ -68,6 +94,7 @@ Name | Signature
 **trim** | `trim() -> String`
 **trimLeft** | `trimLeft(set: NSCharacterSet) -> String`
 **trimRight** | `trimRight(set: NSCharacterSet) -> String`
+**isValidEmail** | `isValidEmail() -> Bool`
 **toDouble** | `toDouble() -> Double?`
 **toFloat** | `toFloat() -> Float?`
 **toUInt** | `toUInt() -> UInt?`
@@ -78,6 +105,21 @@ Name | Signature
 **changeDateFormat** | `changeDateFormat(from: String, to: String, locale: String) -> String`
 
 ### Time (NSDate)
+
+#### Properties
+
+Name |
+---- |
+`seconds: Int` |
+`minutes: Int` |
+`hours: Int` |
+`days: Int` |
+`weekDay: Int` |
+`weekMonth: Int` |
+`month: Int` |
+`year: Int` |
+
+#### Instance Methods
 
 Name | Signature
 ---- | ---------

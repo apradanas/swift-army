@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIColor {
     
-    convenience init(rgba: String) {
+    convenience init(rgbaString rgba: String) {
         var hex:   String = rgba
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
@@ -54,11 +54,18 @@ public extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
     
-    convenience init(rgb: Int, alpha: CGFloat = 1.0) {
-        let red   = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
-        let green = CGFloat((rgb & 0x00FF00) >> 8)  / 255.0
-        let blue  = CGFloat(rgb & 0x0000FF)         / 255.0
+    convenience init(rgbaUInt rgba: UInt) {
+        var colorStr = String(format: "%0X", rgba)
+        if rgba <= 0xFFF {
+            colorStr = String(format: "%03X", rgba)
+        } else if rgba <= 0xFFFF {
+            colorStr = String(format: "%04X", rgba)
+        } else if rgba <= 0xFFFFFF {
+            colorStr = String(format: "%06X", rgba)
+        } else if rgba <= 0xFFFFFFFF {
+            colorStr = String(format: "%08X", rgba)
+        }
         
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
+        self.init(rgbaString: colorStr)
     }
 }

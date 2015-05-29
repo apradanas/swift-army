@@ -10,7 +10,11 @@ import Foundation
 
 public extension String {
     
+    // MARK: - Properties
+    
     var length: Int { return count(self) }
+    
+    // MARK: - Instance Methods
     
     func equals(to: String) -> Bool {
         return self == to
@@ -46,6 +50,16 @@ public extension String {
     func trim() -> String {
         return trimLeft().trimRight()
     }
+    
+    // MARK: - Validation
+    
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        var emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(self)
+    }
+    
+    // MARK: - Conversion
     
     func toDouble() -> Double? {
         let scanner = NSScanner(string: self)
@@ -103,7 +117,7 @@ public extension String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
         if let date = dateFormat.dateFromString(self.trim()) {
-            return date.toString(to)
+            return date.toString(format: to)
         }
         return nil
     }
@@ -112,7 +126,7 @@ public extension String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = from
         if let date = dateFormat.dateFromString(self.trim()) {
-            return date.toString(to, locale: locale)
+            return date.toStringWithLocale(format: to, locale: locale)
         }
         return nil
     }

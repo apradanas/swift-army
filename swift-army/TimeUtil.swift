@@ -10,6 +10,42 @@ import Foundation
 
 public extension NSDate {
     
+    // MARK: - Properties
+    
+    var seconds: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitSecond, fromDate: self)
+    }
+    
+    var minutes: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitMinute, fromDate: self)
+    }
+    
+    var hours: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitHour, fromDate: self)
+    }
+    
+    var days: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitDay, fromDate: self)
+    }
+    
+    var weekDay: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitWeekday, fromDate: self)
+    }
+    
+    var weekMonth: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitWeekOfMonth, fromDate: self)
+    }
+    
+    var month: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitMonth, fromDate: self)
+    }
+    
+    var year: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitYear, fromDate: self)
+    }
+    
+    // MARK: - Instance Methods
+    
     func add(seconds: Int = 0, minutes: Int = 0, hours: Int = 0, days: Int = 0, weeks: Int = 0, months: Int = 0, years: Int = 0) -> NSDate {
         var calendar = NSCalendar.currentCalendar()
         
@@ -140,6 +176,8 @@ public extension NSDate {
         return NSCalendar.currentCalendar().components(.CalendarUnitYear, fromDate: self, toDate: date, options: nil).year
     }
     
+    // MARK: - Validation
+    
     func isAfter(date: NSDate) -> Bool {
         return (self.compare(date) == NSComparisonResult.OrderedDescending)
     }
@@ -169,6 +207,8 @@ public extension NSDate {
         return lhs.yearForWeekOfYear == rhs.yearForWeekOfYear && lhs.weekOfYear == rhs.weekOfYear
     }
     
+    // MARK: - Conversion
+    
     func toLocalTime() -> NSDate {
         let seconds = NSTimeZone.localTimeZone().secondsFromGMTForDate(self)
         return self.addSeconds(seconds)
@@ -179,13 +219,13 @@ public extension NSDate {
         return self.addSeconds(seconds)
     }
     
-    func toString(format: String) -> String {
+    func toString(format: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = format
         return dateFormat.stringFromDate(self)
     }
     
-    func toString(format: String, locale: String) -> String {
+    func toStringWithLocale(format: String = "yyyy-MM-dd HH:mm:ss", locale: String = "en_US") -> String {
         let templateDateFormat = NSDateFormatter.dateFormatFromTemplate(format,
             options: 0,
             locale: NSLocale(localeIdentifier: locale)

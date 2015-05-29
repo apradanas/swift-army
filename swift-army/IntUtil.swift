@@ -10,6 +10,8 @@ import Foundation
 
 public extension Int {
     
+    // MARK: - Properties
+    
     var years: NSTimeInterval {
         return 365 * self.days
     }
@@ -48,5 +50,41 @@ public extension Int {
     
     var second: NSTimeInterval {
         return self.seconds
+    }
+    
+    // MARK: - Validation
+    
+    func isEven() -> Bool {
+        return (self % 2) == 0
+    }
+    
+    func isOdd() -> Bool {
+        return !isEven()
+    }
+    
+    func isPositive() -> Bool {
+        return self > 0
+    }
+    
+    func isNegative() -> Bool {
+        return !isPositive()
+    }
+    
+    // MARK: - Instance Methods
+    
+    func split() -> [Int] {
+        var result = [Int]()
+        
+        for char in String(self) {
+            let str = String(char)
+            if let int = str.toInt() {
+                result.append(int)
+            }
+        }
+        return result
+    }
+    
+    func abs() -> Int {
+        return Swift.abs(self)
     }
 }
