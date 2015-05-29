@@ -10,10 +10,20 @@ import Foundation
 
 public extension Float {
     
+	/**
+        Rounds self to the smallest integer >= self.
+    
+        :returns: smallest integer >= self
+    */
     func ceil() -> Float {
         return ceilf(self)
     }
     
+    /**
+        Rounds self to the largest integer <= self.
+    
+        :returns: largest integer <= self
+    */
     func floor() -> Float {
         return floorf(self)
     }
