@@ -10,6 +10,10 @@ import Foundation
 
 public extension NSDate {
     
+    var seconds: Int {
+        return NSCalendar.currentCalendar().component(.CalendarUnitSecond, fromDate: self)
+    }
+    
     func add(seconds: Int = 0, minutes: Int = 0, hours: Int = 0, days: Int = 0, weeks: Int = 0, months: Int = 0, years: Int = 0) -> NSDate {
         var calendar = NSCalendar.currentCalendar()
         
