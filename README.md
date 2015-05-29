@@ -82,7 +82,7 @@ Name | Signature
 
 Name |
 ---- |
-`length` |
+`length: Int` |
 
 #### Instance Methods
 
@@ -105,6 +105,21 @@ Name | Signature
 **changeDateFormat** | `changeDateFormat(from: String, to: String, locale: String) -> String`
 
 ### Time (NSDate)
+
+#### Properties
+
+Name |
+---- |
+`seconds: Int` |
+`minutes: Int` |
+`hours: Int` |
+`days: Int` |
+`weekDay: Int` |
+`weekMonth: Int` |
+`month: Int` |
+`year: Int` |
+
+#### Instance Methods
 
 Name | Signature
 ---- | ---------
