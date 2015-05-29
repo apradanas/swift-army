@@ -23,7 +23,7 @@ class SwiftArmyExampleFloatTests: QuickSpec {
                 expect(Float(99.001).ceil()).to(beCloseTo(100, within: 0.0001))
                 expect(Float(99.5).ceil()).to(beCloseTo(100, within: 0.0001))
                 
-                expect(Float(-99.999999).ceil()).to(beCloseTo(-99, within: 0.0001))
+                expect(Float(-99.99999).ceil()).to(beCloseTo(-99, within: 0.0001))
                 expect(Float(-99.001).ceil()).to(beCloseTo(-99, within: 0.0001))
                 expect(Float(-99.5).ceil()).to(beCloseTo(-99, within: 0.0001))
             }
@@ -31,7 +31,7 @@ class SwiftArmyExampleFloatTests: QuickSpec {
             it("floor") {
                 expect(Float(0).floor()) == Float(0)
                 
-                expect(Float(99.999999).floor()).to(beCloseTo(99, within: 0.0001))
+                expect(Float(99.99999).floor()).to(beCloseTo(99, within: 0.0001))
                 expect(Float(99.001).floor()).to(beCloseTo(99, within: 0.0001))
                 expect(Float(99.5).floor()).to(beCloseTo(99, within: 0.0001))
                 
