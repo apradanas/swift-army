@@ -69,6 +69,10 @@ public extension Int {
     func isNegative() -> Bool {
         return !isPositive()
     }
+
+    func isZero() -> Bool {
+        return self == 0
+    }
     
     // MARK: - Instance Methods
     
