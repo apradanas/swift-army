@@ -14,17 +14,6 @@ class SwiftArmyExampleTimeTests: QuickSpec {
     
     let dateFormatter = NSDateFormatter()
     var startDate: NSDate?
-
-    override func setUp() {
-        super.setUp()
-        
-        self.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.startDate = self.dateFormatter.dateFromString("2005-05-05 10:20:30")
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
     
     override func spec() {
         
