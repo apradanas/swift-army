@@ -6,105 +6,145 @@
 //  Copyright (c) 2015 @apradanas. All rights reserved.
 //
 
-import UIKit
-import XCTest
 import SwiftArmy
+import Quick
+import Nimble
 
-class SwiftArmyExampleIntTests: XCTestCase {
+class SwiftArmyExampleIntTests: QuickSpec {
     
     let errConversion = "Integer conversion error"
-
-    override func setUp() {
-        super.setUp()
-    }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
-    func testIntYears() {
-        XCTAssertEqual(0.years, 0, errConversion)
-        XCTAssertEqual(1.years, 31536000, errConversion)
-        XCTAssertEqual(15.years, 15 * 31536000, errConversion)
+    override func spec() {
         
-        XCTAssertEqual(-1.years, -31536000, errConversion)
-        XCTAssertEqual(-15.years, -15 * 31536000, errConversion)
+        describe("properties") {
+            
+            it("seconds") {
+                expect(0.seconds) == 0
+                expect(1.seconds) == 1
+                expect(15.seconds) == 15
+                
+                expect(-1.seconds) == -1
+                expect(-15.seconds) == -15
+                
+                expect(0.seconds) == 0.second
+                expect(1.seconds) == 1.second
+                expect(15.seconds) == 15.second
+                
+                expect(-1.seconds) == -1.second
+                expect(-15.seconds) == -15.second
+            }
+            
+            it("minutes") {
+                expect(0.minutes) == 0
+                expect(1.minutes) == 60
+                expect(15.minutes) == 15 * 60
+                
+                expect(-1.minutes) == -60
+                expect(-15.minutes) == -15 * 60
+                
+                expect(0.minutes) == 0.minute
+                expect(1.minutes) == 1.minute
+                expect(15.minutes) == 15.minute
+                
+                expect(-1.minutes) == -1.minute
+                expect(-15.minutes) == -15.minute
+            }
+            
+            it("hours") {
+                expect(0.hours) == 0
+                expect(1.hours) == 3600
+                expect(15.hours) == 15 * 3600
+                
+                expect(-1.hours) == -3600
+                expect(-15.hours) == -15 * 3600
+                
+                expect(0.hours) == 0.hour
+                expect(1.hours) == 1.hour
+                expect(15.hours) == 15.hour
+                
+                expect(-1.hours) == -1.hour
+                expect(-15.hours) == -15.hour
+            }
+            
+            it("days") {
+                expect(0.days) == 0
+                expect(1.days) == 86400
+                expect(15.days) == 15 * 86400
+                
+                expect(-1.days) == -86400
+                expect(-15.days) == -15 * 86400
+                
+                expect(0.days) == 0.day
+                expect(1.days) == 1.day
+                expect(15.days) == 15.day
+                
+                expect(-1.days) == -1.day
+                expect(-15.days) == -15.day
+            }
+            
+            it("years") {
+                expect(0.years) == 0
+                expect(1.years) == 31536000
+                expect(15.years) == 15 * 31536000
+                
+                expect(-1.years) == -31536000
+                expect(-15.years) == -15 * 31536000
+                
+                expect(0.years) == 0.year
+                expect(1.years) == 1.year
+                expect(15.years) == 15.year
+                
+                expect(-1.years) == -1.year
+                expect(-15.years) == -15.year
+            }
+        }
         
-        XCTAssertEqual(0.years, 0.year, errConversion)
-        XCTAssertEqual(1.years, 1.year, errConversion)
-        XCTAssertEqual(15.years, 15.year, errConversion)
+        describe("validation") {
+            
+            it("even") {
+                expect(2.isEven()).to(beTrue())
+                expect(111.isEven()).to(beFalse())
+                
+                expect((-2).isEven()).to(beTrue())
+                expect((-111).isEven()).to(beFalse())
+            }
+            
+            it("odd") {
+                expect(2.isOdd()).to(beFalse())
+                expect(11.isOdd()).to(beTrue())
+                
+                expect((-2).isOdd()).to(beFalse())
+                expect((-11).isOdd()).to(beTrue())
+            }
+            
+            it("positive") {
+                expect(2.isPositive()).to(beTrue())
+                expect((-2).isPositive()).to(beFalse())
+                
+                expect(111.isPositive()).to(beTrue())
+                expect((-111).isPositive()).to(beFalse())
+            }
+            
+            it("negative") {
+                expect(2.isNegative()).to(beFalse())
+                expect((-2).isNegative()).to(beTrue())
+                
+                expect(111.isNegative()).to(beFalse())
+                expect((-111).isNegative()).to(beTrue())
+            }
+        }
         
-        XCTAssertEqual(-1.years, -1.year, errConversion)
-        XCTAssertEqual(-15.years, -15.year, errConversion)
-    }
-    
-    func testIntDays() {
-        XCTAssertEqual(0.days, 0, errConversion)
-        XCTAssertEqual(1.days, 86400, errConversion)
-        XCTAssertEqual(15.days, 15 * 86400, errConversion)
-        
-        XCTAssertEqual(-1.days, -86400, errConversion)
-        XCTAssertEqual(-15.days, -15 * 86400, errConversion)
-        
-        XCTAssertEqual(0.days, 0.day, errConversion)
-        XCTAssertEqual(1.days, 1.day, errConversion)
-        XCTAssertEqual(15.days, 15.day, errConversion)
-        
-        XCTAssertEqual(-1.days, -1.day, errConversion)
-        XCTAssertEqual(-15.days, -15.day, errConversion)
-    }
-    
-    func testIntHours() {
-        XCTAssertEqual(0.hours, 0, errConversion)
-        XCTAssertEqual(1.hours, 3600, errConversion)
-        XCTAssertEqual(15.hours, 15 * 3600, errConversion)
-        
-        XCTAssertEqual(-1.hours, -3600, errConversion)
-        XCTAssertEqual(-15.hours, -15 * 3600, errConversion)
-        
-        XCTAssertEqual(0.hours, 0.hour, errConversion)
-        XCTAssertEqual(1.hours, 1.hour, errConversion)
-        XCTAssertEqual(15.hours, 15.hour, errConversion)
-        
-        XCTAssertEqual(-1.hours, -1.hour, errConversion)
-        XCTAssertEqual(-15.hours, -15.hour, errConversion)
-    }
-    
-    func testIntMinutes() {
-        XCTAssertEqual(0.minutes, 0, errConversion)
-        XCTAssertEqual(1.minutes, 60, errConversion)
-        XCTAssertEqual(15.minutes, 15 * 60, errConversion)
-        
-        XCTAssertEqual(-1.minutes, -60, errConversion)
-        XCTAssertEqual(-15.minutes, -15 * 60, errConversion)
-        
-        XCTAssertEqual(0.minutes, 0.minute, errConversion)
-        XCTAssertEqual(1.minutes, 1.minute, errConversion)
-        XCTAssertEqual(15.minutes, 15.minute, errConversion)
-        
-        XCTAssertEqual(-1.minutes, -1.minute, errConversion)
-        XCTAssertEqual(-15.minutes, -15.minute, errConversion)
-    }
-    
-    func testIntSeconds() {
-        XCTAssertEqual(0.seconds, 0, errConversion)
-        XCTAssertEqual(1.seconds, 1, errConversion)
-        XCTAssertEqual(15.seconds, 15, errConversion)
-        
-        XCTAssertEqual(-1.seconds, -1, errConversion)
-        XCTAssertEqual(-15.seconds, -15, errConversion)
-        
-        XCTAssertEqual(0.seconds, 0.second, errConversion)
-        XCTAssertEqual(1.seconds, 1.second, errConversion)
-        XCTAssertEqual(15.seconds, 15.second, errConversion)
-        
-        XCTAssertEqual(-1.seconds, -1.second, errConversion)
-        XCTAssertEqual(-15.seconds, -15.second, errConversion)
-    }
-
-
-    func testPerformanceExample() {
-        self.measureBlock() {
+        describe("instance methods") {
+            
+            it("split") {
+                expect(0.split()) == [0]
+                expect(1234.split()) == [1, 2, 3, 4]
+            }
+            
+            it("abs") {
+                expect(2.abs()) == 2
+                expect((-111).abs()) == 111
+            }
         }
     }
 
