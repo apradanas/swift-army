@@ -20,7 +20,7 @@ Just clone and add all *.swift files in ```swift-army``` folder to your project.
 
 ### CocoaPods
 
-``` pod 'SwiftArmy'```
+	pod 'SwiftArmy', '~> 0.1'
 
 - Don't forget to ```import SwiftArmy```
 
