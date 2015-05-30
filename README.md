@@ -24,6 +24,16 @@ Just clone and add all *.swift files in ```swift-army``` folder to your project.
 
 - Don't forget to ```import SwiftArmy```
 
+## Contents
+
+- [Extensions](#extensions)
+	- [Color](#color-uicolor)
+	- [Double](#double)
+	- [Float](#float)
+	- [Int](#int)
+	- [String](#string)
+	- [Time](#time-nsdate)
+
 ## Extensions
 
 ### Color (UIColor)
@@ -151,6 +161,7 @@ Name | Signature
 **isSameWeekAs** | `isSameWeekAs(date: NSDate) -> Bool`
 **toLocalTime** | `toLocalTime() -> NSDate`
 **toGlobalTime** | `toGlobalTime() -> NSDate`
+**toTimezone** | `toTimezone(abbreviation: String!) -> NSDate?`
 **toString** | `toString(format: String) -> String`
 **toString** | `toString(format: String, locale: String) -> String`
 
