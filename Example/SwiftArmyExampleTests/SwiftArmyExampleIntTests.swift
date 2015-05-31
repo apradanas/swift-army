@@ -101,7 +101,7 @@ class SwiftArmyExampleIntTests: QuickSpec {
         
         describe("validation") {
             
-            it("even") {
+            it("isEven") {
                 expect(2.isEven()).to(beTrue())
                 expect(111.isEven()).to(beFalse())
                 
@@ -109,7 +109,7 @@ class SwiftArmyExampleIntTests: QuickSpec {
                 expect((-111).isEven()).to(beFalse())
             }
             
-            it("odd") {
+            it("isOdd") {
                 expect(2.isOdd()).to(beFalse())
                 expect(11.isOdd()).to(beTrue())
                 
@@ -117,7 +117,7 @@ class SwiftArmyExampleIntTests: QuickSpec {
                 expect((-11).isOdd()).to(beTrue())
             }
             
-            it("positive") {
+            it("isPositive") {
                 expect(2.isPositive()).to(beTrue())
                 expect((-2).isPositive()).to(beFalse())
                 
@@ -125,12 +125,18 @@ class SwiftArmyExampleIntTests: QuickSpec {
                 expect((-111).isPositive()).to(beFalse())
             }
             
-            it("negative") {
+            it("isNegative") {
                 expect(2.isNegative()).to(beFalse())
                 expect((-2).isNegative()).to(beTrue())
                 
                 expect(111.isNegative()).to(beFalse())
                 expect((-111).isNegative()).to(beTrue())
+            }
+            
+            it("isZero") {
+                expect(0.isZero()).to(beTrue())
+                expect(33.isZero()).to(beFalse())
+                expect((-2).isZero()).to(beFalse())
             }
         }
         
