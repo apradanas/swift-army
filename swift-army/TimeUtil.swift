@@ -219,6 +219,13 @@ public extension NSDate {
         return self.addSeconds(seconds)
     }
     
+    func toTimezone(abbreviation : String!) -> NSDate? {
+        if let seconds = NSTimeZone(abbreviation: abbreviation)?.secondsFromGMTForDate(self) {
+            return self.addSeconds(seconds)
+        }
+        return nil
+    }
+    
     func toString(format: String = "yyyy-MM-dd HH:mm:ss") -> String {
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = format

@@ -97,6 +97,18 @@ class SwiftArmyExampleStringTests: QuickSpec {
             }
         }
         
+        describe("validation") {
+            
+            it("isValidEmail") {
+                expect("john.doe@mail.com".isValidEmail()).to(beTrue())
+                expect("john.doe@mail.co".isValidEmail()).to(beTrue())
+                expect("john.doe@mail".isValidEmail()).to(beFalse())
+                expect("john doe@mail.co".isValidEmail()).to(beFalse())
+                expect("  john.doe@mail.com".isValidEmail()).to(beFalse())
+                expect("john.doe@mail.com   ".isValidEmail()).to(beFalse())
+            }
+        }
+        
         describe("conversion") {
             
             it("toDouble") {

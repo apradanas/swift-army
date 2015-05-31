@@ -11,6 +11,8 @@
 		DF3458921B16382E00BE67DE /* SwiftArmyExampleStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3458911B16382E00BE67DE /* SwiftArmyExampleStringTests.swift */; };
 		DF42D3D81B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D3D71B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift */; };
 		DF42D3DA1B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF42D3D91B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift */; };
+		DF942B841B18BBE000D7B6AA /* SwiftArmyExampleDoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF942B831B18BBE000D7B6AA /* SwiftArmyExampleDoubleTests.swift */; };
+		DF942B861B18BDDC00D7B6AA /* SwiftArmyExampleFloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF942B851B18BDDC00D7B6AA /* SwiftArmyExampleFloatTests.swift */; };
 		DFC6D6961B1612F700D3E285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D6951B1612F700D3E285 /* AppDelegate.swift */; };
 		DFC6D6981B1612F700D3E285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D6971B1612F700D3E285 /* ViewController.swift */; };
 		DFC6D69B1B1612F700D3E285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC6D6991B1612F700D3E285 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		DF3458911B16382E00BE67DE /* SwiftArmyExampleStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleStringTests.swift; sourceTree = "<group>"; };
 		DF42D3D71B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleIntTests.swift; sourceTree = "<group>"; };
 		DF42D3D91B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleTimeTests.swift; sourceTree = "<group>"; };
+		DF942B831B18BBE000D7B6AA /* SwiftArmyExampleDoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleDoubleTests.swift; sourceTree = "<group>"; };
+		DF942B851B18BDDC00D7B6AA /* SwiftArmyExampleFloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftArmyExampleFloatTests.swift; sourceTree = "<group>"; };
 		DFC6D6901B1612F700D3E285 /* SwiftArmyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArmyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC6D6941B1612F700D3E285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFC6D6951B1612F700D3E285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				DFC6D6AB1B1612F700D3E285 /* SwiftArmyExampleTests.swift */,
+				DF942B831B18BBE000D7B6AA /* SwiftArmyExampleDoubleTests.swift */,
+				DF942B851B18BDDC00D7B6AA /* SwiftArmyExampleFloatTests.swift */,
 				DF42D3D71B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift */,
 				DF3458911B16382E00BE67DE /* SwiftArmyExampleStringTests.swift */,
 				DF42D3D91B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift */,
@@ -355,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF942B861B18BDDC00D7B6AA /* SwiftArmyExampleFloatTests.swift in Sources */,
 				DF3458921B16382E00BE67DE /* SwiftArmyExampleStringTests.swift in Sources */,
+				DF942B841B18BBE000D7B6AA /* SwiftArmyExampleDoubleTests.swift in Sources */,
 				DFC6D6AC1B1612F700D3E285 /* SwiftArmyExampleTests.swift in Sources */,
 				DF42D3DA1B16F58400BEDF8A /* SwiftArmyExampleTimeTests.swift in Sources */,
 				DF42D3D81B16F07F00BEDF8A /* SwiftArmyExampleIntTests.swift in Sources */,
