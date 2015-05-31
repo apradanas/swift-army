@@ -271,6 +271,13 @@ class SwiftArmyExampleTimeTests: QuickSpec {
         
         describe("conversion") {
             
+            it("toTimezone") {
+                expect(self.startDate?.toTimezone("")).to(beNil())
+                
+                var expectedDate = self.startDate!.addSeconds(NSTimeZone(abbreviation: "EST")!.secondsFromGMTForDate(self.startDate!))
+                expect(self.startDate?.toTimezone("EST")) == expectedDate
+            }
+            
             it("toString") {
                 expect(self.startDate?.toString()) == "2015-01-01 00:00:00"
             }
