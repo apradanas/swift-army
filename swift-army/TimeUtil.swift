@@ -243,4 +243,47 @@ public extension NSDate {
         dateFormat.locale = NSLocale(localeIdentifier: locale)
         return dateFormat.stringFromDate(self)
     }
+    
+    func toString(#dateStyle: NSDateFormatterStyle, timeStyle: NSDateFormatterStyle) -> String {
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateStyle = dateStyle
+        dateFormat.timeStyle = timeStyle
+        return dateFormat.stringFromDate(self)
+    }
+    
+    func toShortString() -> String {
+        return toString(dateStyle: .ShortStyle, timeStyle: .ShortStyle)
+    }
+    
+    func toShortDateString() -> String {
+        return toString(dateStyle: .ShortStyle, timeStyle: .NoStyle)
+    }
+    
+    func toShortTimeString() -> String {
+        return toString(dateStyle: .NoStyle, timeStyle: .ShortStyle)
+    }
+    
+    func toMediumString() -> String {
+        return toString(dateStyle: .MediumStyle, timeStyle: .MediumStyle)
+    }
+    
+    func toMediumDateString() -> String {
+        return toString(dateStyle: .MediumStyle, timeStyle: .NoStyle)
+    }
+    
+    func toMediumTimeString() -> String {
+        return toString(dateStyle: .NoStyle, timeStyle: .MediumStyle)
+    }
+    
+    func toLongString() -> String {
+        return toString(dateStyle: .LongStyle, timeStyle: .LongStyle)
+    }
+    
+    func toLongDateString() -> String {
+        return toString(dateStyle: .LongStyle, timeStyle: .NoStyle)
+    }
+    
+    func toLongTimeString() -> String {
+        return toString(dateStyle: .NoStyle, timeStyle: .LongStyle)
+    }
 }
