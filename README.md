@@ -164,6 +164,16 @@ Name | Signature
 **toTimezone** | `toTimezone(abbreviation: String!) -> NSDate?`
 **toString** | `toString(format: String) -> String`
 **toString** | `toString(format: String, locale: String) -> String`
+**toString** | `toString(#dateStyle: NSDateFormatterStyle, timeStyle: NSDateFormatterStyle) -> String`
+**toShortString** | `toShortString() -> String`
+**toShortDateString** | `toShortDateString() -> String`
+**toShortTimeString** | `toShortTimeString() -> String`
+**toMediumString** | `toMediumString() -> String`
+**toMediumDateString** | `toMediumDateString() -> String`
+**toMediumTimeString** | `toMediumTimeString() -> String`
+**toLongString** | `toLongString() -> String`
+**toLongDateString** | `toLongDateString() -> String`
+**toLongTimeString** | `toLongTimeString() -> String`
 
 ## License
 

@@ -9,6 +9,15 @@
 import Foundation
 
 public extension Float {
+
+	/**
+        Absolute value.
+        
+        :returns: absolute value of self
+    */
+    func abs() -> Float {
+        return fabsf(self)
+    }
     
 	/**
         Rounds self to the smallest integer >= self.
@@ -26,5 +35,14 @@ public extension Float {
     */
     func floor() -> Float {
         return floorf(self)
+    }
+
+    /**
+        Squared root.
+    
+        :returns: squared root of self
+    */
+    func sqrt() -> Float {
+        return sqrtf(self)
     }
 }
