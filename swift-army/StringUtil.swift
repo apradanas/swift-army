@@ -12,18 +12,41 @@ public extension String {
     
     // MARK: - Properties
     
+    /**
+        Return length of the string.
+
+        :returns: length of the string
+    */
     var length: Int { return count(self) }
     
     // MARK: - Instance Methods
     
+    /**
+        Check if self is equal to another string (case sensitive)
+
+        :param: target string
+        :returns: self is equal or not
+    */
     func equals(to: String) -> Bool {
         return self == to
     }
     
+    /**
+        Check if self is equal to another string (not case sensitive)
+
+        :param: target string
+        :returns: self is equal or not
+    */
     func equalsIgnoreCase(to: String) -> Bool {
         return self.caseInsensitiveCompare(to) == NSComparisonResult.OrderedSame
     }
     
+    /**
+        Returns an array of strings, each of which is a substring of self formed by splitting it on separator.
+
+        :param: separator Character used to split the string
+        :returns: array of substrings
+    */
     func split(splitter: String) -> [String] {
         let regEx = NSRegularExpression(pattern: splitter, options: NSRegularExpressionOptions(), error: nil)
         let stop = "<Error>"
@@ -33,6 +56,11 @@ public extension String {
         return modifiedString.componentsSeparatedByString(stop)
     }
     
+    /**
+        Strips the specified characters from the beginning of self.
+
+        :returns: stripped string
+    */
     func trimLeft(characterSet set: NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()) -> String {
         if let range = rangeOfCharacterFromSet(set.invertedSet) {
             return self[range.startIndex..<endIndex]
@@ -40,6 +68,11 @@ public extension String {
         return ""
     }
     
+    /**
+        Strips the specified characters from the end of self.
+
+        :returns: stripped string
+    */
     func trimRight(characterSet set: NSCharacterSet = NSCharacterSet.whitespaceAndNewlineCharacterSet()) -> String {
         if let range = rangeOfCharacterFromSet(set.invertedSet, options: NSStringCompareOptions.BackwardsSearch) {
             return self[startIndex..<range.endIndex]
@@ -47,12 +80,22 @@ public extension String {
         return ""
     }
     
+    /**
+        Strips whitespaces from both the beginning and the end of self.
+
+        :returns: stripped string
+    */
     func trim() -> String {
         return trimLeft().trimRight()
     }
     
     // MARK: - Validation
     
+    /**
+        Check if string is a valid email address format
+
+        :returns: self is a valid email or not
+    */
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         var emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
