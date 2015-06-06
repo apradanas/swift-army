@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftArmy"
-  s.version          = "0.1.5"
+  s.version          = "0.1.6"
   s.summary          = "A collection of Swift extensions"
   s.description      = "A collection of Swift extensions. Helper all written in Swift"
   s.homepage         = "https://github.com/apradanas/swift-army"
