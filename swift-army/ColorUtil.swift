@@ -10,6 +10,9 @@ import Foundation
 
 public extension UIColor {
     
+    /**
+        Initialize with String color code.
+    */
     convenience init(rgbaString rgba: String) {
         var hex:   String = rgba
         var red:   CGFloat = 0.0
@@ -54,6 +57,9 @@ public extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
     
+    /**
+        Initialize with UInt color code.
+    */
     convenience init(rgbaUInt rgba: UInt) {
         var colorStr = String(format: "%0X", rgba)
         if rgba <= 0xFFF {
