@@ -76,6 +76,11 @@ public extension Int {
     
     // MARK: - Instance Methods
     
+    /**
+        Returns an array of ints, each of which is a substring of self.
+
+        :returns: array of ints
+    */
     func split() -> [Int] {
         var result = [Int]()
         
@@ -88,6 +93,11 @@ public extension Int {
         return result
     }
     
+    /**
+        Absolute value.
+    
+        :returns: absolute value of self
+    */
     func abs() -> Int {
         return Swift.abs(self)
     }
