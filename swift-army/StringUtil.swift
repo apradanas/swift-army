@@ -104,6 +104,11 @@ public extension String {
     
     // MARK: - Conversion
     
+    /**
+        Parses a string containing a double numerical value into an optional double if the string is a well formed number.
+
+        :returns: a double parsed from the string or nil if it cannot be parsed.
+    */
     func toDouble() -> Double? {
         let scanner = NSScanner(string: self)
         var double: Double = 0
@@ -114,6 +119,11 @@ public extension String {
         return nil
     }
     
+    /**
+        Parses a string containing a float numerical value into an optional float if the string is a well formed number.
+
+        :returns: a float parsed from the string or nil if it cannot be parsed.
+    */
     func toFloat() -> Float? {
         let scanner = NSScanner(string: self)
         var float: Float = 0
@@ -124,6 +134,11 @@ public extension String {
         return nil
     }
     
+    /**
+        Parses a string containing a UInt numerical value into an optional UInt if the string is a well formed number.
+
+        :returns: a UInt parsed from the string or nil if it cannot be parsed.
+    */
     func toUInt() -> UInt? {
         if let val = self.trim().toInt() {
             if val < 0 {
@@ -134,6 +149,11 @@ public extension String {
         return nil
     }
 
+    /**
+        Parses a string containing a boolean value into an optional boolean if the string is a well formed number.
+
+        :returns: a boolean parsed from the string or nil if it cannot be parsed.
+    */
     func toBool() -> Bool? {
         let text = self.trim()
         if text.equalsIgnoreCase("true") || text.equalsIgnoreCase("false") || text.equalsIgnoreCase("yes") || text.equalsIgnoreCase("no") {
