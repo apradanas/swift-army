@@ -47,15 +47,19 @@ Name | Signature
 
 Name | Signature
 ---- | ---------
+**abs** | `abs() -> Double`
 **ceil** | `ceil() -> Double`
 **floor** | `floor() -> Double`
+**sqrt** | `sqrt() -> Double`
 
 ### Float
 
 Name | Signature
 ---- | ---------
+**abs** | `abs() -> Float`
 **ceil** | `ceil() -> Float`
 **floor** | `floor() -> Float`
+**sqrt** | `sqrt() -> Float`
 
 ### Int
 
