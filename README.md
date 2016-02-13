@@ -8,7 +8,7 @@ A collection of Swift extensions
 
 ## Requirements
 
-- iOS 7.0+ (8.0+ if you use Cocoapods)
+- iOS 7.0+ (8.0+ if you use CocoaPods)
 - Xcode 6.3
 - Swift 1.2
 
